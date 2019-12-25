@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div id="header" align="center">
     <h1>選課系統</h1>
-    <a href="<?=base_url('index.php/department')?>">科系管理系統</a>
+    <a href="<?=base_url('department')?>">科系管理系統</a>
 </div>
 
 </body>
