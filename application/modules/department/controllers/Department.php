@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * Class Department
+ *
+ * @property Department_model $department_model
+ */
 class Department extends MX_Controller
 {
     /**
@@ -9,6 +14,7 @@ class Department extends MX_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('Department_model', 'department_model');
     }
 
     /**
@@ -16,6 +22,7 @@ class Department extends MX_Controller
      */
     public function index()
     {
-        $this->load->view('department');
+        $result = $this->department_model->get_department_data();
+        $this->load->view('department', array('departments' => $result->result_array()));
     }
 }
