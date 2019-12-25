@@ -1,12 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * Class Home
+ */
 class Home extends MX_Controller
 {
     /**
-     * @var
+     * @var department
      */
-    protected $department_api;
+    protected $department;
 
     /**
      * Home constructor.
@@ -14,7 +17,7 @@ class Home extends MX_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->department_api = Modules::load('department');
+        $this->department = Modules::load('department');
     }
 
     /**
@@ -22,6 +25,6 @@ class Home extends MX_Controller
      */
     public function index()
     {
-        $this->department_api->get_department_view();
+        $this->department->get_department_view();
     }
 }
