@@ -11,7 +11,7 @@ class Department extends MX_Controller
         parent::__construct();
     }
 
-    public function get_department_view()
+    public function index()
     {
         $this->load->view('department');
     }
