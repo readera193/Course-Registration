@@ -11,6 +11,9 @@ class Department extends MX_Controller
         parent::__construct();
     }
 
+    /**
+     * 科系管理系統頁面
+     */
     public function index()
     {
         $this->load->view('department');
