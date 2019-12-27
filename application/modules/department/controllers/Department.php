@@ -21,7 +21,7 @@ class Department extends MX_Controller
      */
     public function index()
     {
-        $result = $this->department_model->get_department_data();
+        $result = $this->department_model->get_data();
         $this->load->view('department', array('departments' => $result->result_array()));
     }
 
@@ -41,9 +41,22 @@ class Department extends MX_Controller
         $department_data = $this->input->post();
         // 多一個 0 => [系主任的輸入值]
         array_pop($department_data);
-        $this->department_model->insert_department_data($department_data);
+        $this->department_model->insert_data($department_data);
 
         echo "新增成功<br>";
+        $this->load->view('navigate_department');
+    }
+
+    /**
+     * 刪除科系資料
+     *
+     * @param string $id 科系代碼
+     */
+    public function delete($id)
+    {
+        $this->department_model->delete_data($id);
+
+        echo "刪除成功<br>";
         $this->load->view('navigate_department');
     }
 }

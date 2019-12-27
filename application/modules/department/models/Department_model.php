@@ -19,7 +19,7 @@ class Department_model extends CI_Model
      *
      * @return CI_DB_result
      */
-    public function get_department_data()
+    public function get_data()
     {
         $this->db->select('*');
         $this->db->from('科系代碼表');
@@ -31,8 +31,19 @@ class Department_model extends CI_Model
      *
      * @param array $department_data
      */
-    public function insert_department_data($department_data)
+    public function insert_data($department_data)
     {
         $this->db->insert('科系代碼表', $department_data);
+    }
+
+    /**
+     * 刪除科系資料
+     *
+     * @param string $id 科系代碼
+     */
+    public function delete_data($id)
+    {
+        $this->db->where('系碼', $id);
+        $this->db->delete('科系代碼表');
     }
 }
