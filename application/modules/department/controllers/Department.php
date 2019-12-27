@@ -24,4 +24,26 @@ class Department extends MX_Controller
         $result = $this->department_model->get_department_data();
         $this->load->view('department', array('departments' => $result->result_array()));
     }
+
+    /**
+     * 新增科系資料頁面
+     */
+    public function insert()
+    {
+        $this->load->view('insert_view');
+    }
+
+    /**
+     * 新增科系資料到資料庫
+     */
+    public function insert_db()
+    {
+        $department_data = $this->input->post();
+        // 多一個 0 => [系主任的輸入值]
+        array_pop($department_data);
+        $this->department_model->insert_department_data($department_data);
+
+        echo "新增成功<br>";
+        $this->load->view('navigate_department');
+    }
 }

@@ -8,6 +8,8 @@
 
 <div id="container" align="center">
     <h1>科系代碼表</h1>
+    <button onclick="window.location.assign('department/insert')">新增</button>
+
     <table border="1">
         <tr>
             <th>系碼</th>
