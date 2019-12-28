@@ -9,7 +9,7 @@
 <div id="container" align="center">
     <h1>科系代碼表</h1>
 
-    <button onclick="window.location.assign('<?=base_url()?>')">首頁</button>
+    <button onclick="window.location.assign('<?= base_url() ?>')">首頁</button>
 
     <button onclick="window.location.assign('department/insert')">新增</button>
 
@@ -30,6 +30,7 @@
                 <td><?= $department['系主任'] ?></td>
                 <td>
                     <!-- TODO: 修改功能 -->
+                    <a href="<?= base_url() ?>department/update/<?= $department['系碼'] ?>">修改</a>
                     <a href="<?= base_url() ?>department/delete/<?= $department['系碼'] ?>">刪除</a>
                 </td>
             </tr>

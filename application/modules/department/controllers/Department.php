@@ -50,6 +50,32 @@ class Department extends MX_Controller
     }
 
     /**
+     * 修改科系資料
+     *
+     * @param string $id 科系代碼
+     */
+    public function update($id)
+    {
+        $result = $this->department_model->get_data_by_id($id)->first_row('array');
+        $this->load->view('update_view', array('department_data' => $result));
+    }
+
+    /**
+     * 修改科系代碼表的資料
+     *
+     * @param string $id 科系代碼
+     */
+    public function update_db($id)
+    {
+        $name = $this->input->post('系名');
+        $dean = $this->input->post('系主任');
+        $this->department_model->update_data($id, $name, $dean);
+
+        echo "修改成功<br>";
+        $this->load->view('navigate_department');
+    }
+
+    /**
      * 刪除科系資料
      *
      * @param string $id 科系代碼
@@ -62,3 +88,4 @@ class Department extends MX_Controller
         $this->load->view('navigate_department');
     }
 }
+
