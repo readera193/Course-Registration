@@ -92,7 +92,7 @@ class Department extends MX_Controller
     {
         $id = $this->input->post('系碼');
         $result = $this->department_model->get_data_by_id($id);
-        if ($result->num_rows() > 0){
+        if ($result->num_rows() > 0) {
             $department = $result->first_row('array');
             echo "
             <table border='1'>
@@ -107,8 +107,7 @@ class Department extends MX_Controller
                     <td>{$department['系主任']}</td>
                 </tr>
             </table>";
-        }
-        else{
+        } else {
             echo "查無資料";
         }
         $this->load->view('navigate_department');
