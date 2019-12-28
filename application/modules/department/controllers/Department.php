@@ -88,6 +88,9 @@ class Department extends MX_Controller
         $this->load->view('navigate_department');
     }
 
+    /**
+     * 用系碼查詢科系代碼表
+     */
     public function search()
     {
         $id = $this->input->post('系碼');
