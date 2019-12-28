@@ -38,9 +38,11 @@ class Department extends MX_Controller
      */
     public function insert_db()
     {
-        $department_data = $this->input->post();
-        // 多一個 0 => 系主任的輸入值
-        array_pop($department_data);
+        $department_data = array(
+            '系碼' => $this->input->post('系碼'),
+            '系名' => $this->input->post('系名'),
+            '系主任' => $this->input->post('系主任')
+        );
         $this->department_model->insert_data($department_data);
 
         echo "新增成功<br>";
