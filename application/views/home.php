@@ -8,8 +8,8 @@
 
 <div id="header" align="center">
     <h1>選課系統</h1>
-    <input type="button" onclick="window.location.assign('department')" value="科系管理系統">
-    <input type="button" onclick="window.location.assign('course')" value="課程管理系統">
+    <button type="button" onclick="window.location.assign('department')">科系管理系統</button>
+    <button type="button" onclick="window.location.assign('course')">課程管理系統</button>
 </div>
 
 </body>

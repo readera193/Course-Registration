@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>課程資料表</title>
+    <title>課程管理系統</title>
 </head>
 <body>
 
 <div id="container" align="center">
-    <h1>課程資料表</h1>
+    <h1>課程管理系統</h1>
     <button onclick="window.location.assign('<?= base_url() ?>')">首頁</button>
     <button onclick="window.location.assign('course/insert')">新增</button>
     <br><br>
