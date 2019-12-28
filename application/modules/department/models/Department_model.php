@@ -29,7 +29,7 @@ class Department_model extends CI_Model
     /**
      * 新增科系資料
      *
-     * @param array $department_data
+     * @param array $department_data 要插入的資料
      */
     public function insert_data($department_data)
     {
