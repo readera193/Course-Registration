@@ -44,10 +44,14 @@ class Course_model extends CI_Model
      * 新增課程資料
      *
      * @param array $course_data 要插入的資料
+     * @return bool 是否新增成功
      */
     public function insert_data($course_data)
     {
+        $this->db->trans_start();
         $this->db->insert('課程資料表', $course_data);
+        $this->db->trans_complete();
+        return $this->db->trans_status();
     }
 
     /**

@@ -43,9 +43,13 @@ class Course extends MX_Controller
             '課名' => $this->input->post('課名'),
             '學分數' => $this->input->post('學分數')
         );
-        $this->course_model->insert_data($course_data);
+        $result = $this->course_model->insert_data($course_data);
 
-        echo "新增成功";
+        if ($result) {
+            echo "新增成功";
+        } else {
+            echo "新增失敗";
+        }
         $this->load->view('navigate_course');
     }
 
