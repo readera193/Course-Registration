@@ -44,10 +44,14 @@ class Department_model extends CI_Model
      * 新增科系資料
      *
      * @param array $department_data 要插入的資料
+     * @return bool 是否新增成功
      */
     public function insert_data($department_data)
     {
+        $this->db->trans_start(TRUE);
         $this->db->insert('科系代碼表', $department_data);
+        $this->db->trans_complete();
+        return $this->db->trans_status();
     }
 
     /**

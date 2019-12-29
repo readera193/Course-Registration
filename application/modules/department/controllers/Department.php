@@ -43,9 +43,13 @@ class Department extends MX_Controller
             '系名' => $this->input->post('系名'),
             '系主任' => $this->input->post('系主任')
         );
-        $this->department_model->insert_data($department_data);
+        $result = $this->department_model->insert_data($department_data);
 
-        echo "新增成功";
+        if ($result) {
+            echo "新增成功";
+        } else {
+            echo "新增失敗";
+        }
         $this->load->view('navigate_department');
     }
 
@@ -88,6 +92,9 @@ class Department extends MX_Controller
         $this->load->view('navigate_department');
     }
 
+    /**
+     * 用系碼查詢科系代碼表
+     */
     public function search()
     {
         $id = $this->input->post('系碼');

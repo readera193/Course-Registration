@@ -8,6 +8,8 @@
 
 <div id="container" align="center">
     <h1>修改科系資料</h1>
+    <button onclick="window.location.assign('<?= base_url() ?>department')">回到科系管理系統頁面</button>
+    <br><br>
     <form method="post" action="<?= base_url() ?>department/update_db/<?= $department_data['系碼'] ?>">
         <table border="1">
             <tr>
@@ -27,9 +29,9 @@
                 <td><input type="text" name="系主任" value="<?= $department_data['系主任'] ?>"></td>
             </tr>
         </table>
+        <br>
         <input type="submit" value="修改資料">
     </form>
-    <button onclick="window.location.assign('<?= base_url() ?>department')">回到科系管理系統頁面</button>
 </div>
 
 </body>
