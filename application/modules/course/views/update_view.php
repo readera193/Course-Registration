@@ -8,6 +8,8 @@
 
 <div id="container" align="center">
     <h1>修改課程資料</h1>
+    <button onclick="window.location.assign('<?= base_url() ?>course')">回到課程管理系統頁面</button>
+    <br><br>
     <form method="post" action="<?= base_url() ?>course/update_db/<?= $course_data['課號'] ?>">
         <table border="1">
             <tr>
@@ -27,9 +29,9 @@
                 <td><input type="number" name="學分數" value="<?= $course_data['學分數'] ?>"></td>
             </tr>
         </table>
+        <br>
         <input type="submit" value="修改資料">
     </form>
-    <button onclick="window.location.assign('<?= base_url() ?>course')">回到課程管理系統頁面</button>
 </div>
 
 </body>
