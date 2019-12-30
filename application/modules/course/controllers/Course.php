@@ -8,7 +8,7 @@
 class Course extends MX_Controller
 {
     /**
-     * Department constructor.
+     * Course constructor.
      */
     public function __construct()
     {
