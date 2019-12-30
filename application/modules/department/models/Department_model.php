@@ -48,7 +48,7 @@ class Department_model extends CI_Model
      */
     public function insert_data($department_data)
     {
-        $this->db->trans_start(TRUE);
+        $this->db->trans_start();
         $this->db->insert('科系代碼表', $department_data);
         $this->db->trans_complete();
         return $this->db->trans_status();
@@ -60,6 +60,7 @@ class Department_model extends CI_Model
      * @param string $id 科系代碼
      * @param string $name 系名
      * @param string $dean 系主任
+     * @return bool 是否修改成功
      */
     public function update_data($id, $name, $dean)
     {
@@ -68,7 +69,10 @@ class Department_model extends CI_Model
             '系主任' => $dean
         );
         $this->db->where('系碼', $id);
+        $this->db->trans_start();
         $this->db->update('科系代碼表', $data);
+        $this->db->trans_complete();
+        return $this->db->trans_status();
     }
 
     /**
