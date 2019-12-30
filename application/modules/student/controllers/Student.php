@@ -73,9 +73,13 @@ class Student extends MX_Controller
     {
         $name = $this->input->post('姓名');
         $department_id = $this->input->post('系碼');
-        $this->student_model->update_data($student_id, $name, $department_id);
+        $result = $this->student_model->update_data($student_id, $name, $department_id);
 
-        echo "修改成功";
+        if ($result) {
+            echo "修改成功";
+        } else {
+            echo "修改失敗";
+        }
         $this->load->view('navigate_student');
     }
 

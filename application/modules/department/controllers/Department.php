@@ -73,9 +73,13 @@ class Department extends MX_Controller
     {
         $name = $this->input->post('系名');
         $dean = $this->input->post('系主任');
-        $this->department_model->update_data($id, $name, $dean);
+        $result = $this->department_model->update_data($id, $name, $dean);
 
-        echo "修改成功";
+        if ($result) {
+            echo "修改成功";
+        } else {
+            echo "修改失敗";
+        }
         $this->load->view('navigate_department');
     }
 

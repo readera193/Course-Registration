@@ -60,6 +60,7 @@ class Course_model extends CI_Model
      * @param string $id 課號
      * @param string $name 課名
      * @param string $credit 學分數
+     * @return bool 是否修改成功
      */
     public function update_data($id, $name, $credit)
     {
@@ -68,7 +69,10 @@ class Course_model extends CI_Model
             '學分數' => $credit
         );
         $this->db->where('課號', $id);
+        $this->db->trans_start();
         $this->db->update('課程資料表', $data);
+        $this->db->trans_complete();
+        return $this->db->trans_status();
     }
 
     /**

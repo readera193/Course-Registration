@@ -60,6 +60,7 @@ class Student_model extends CI_Model
      * @param string $student_id 學號
      * @param string $name 姓名
      * @param string $department_id 系碼
+     * @return bool 是否修改成功
      */
     public function update_data($student_id, $name, $department_id)
     {
@@ -68,7 +69,10 @@ class Student_model extends CI_Model
             '系碼' => $department_id
         );
         $this->db->where('學號', $student_id);
+        $this->db->trans_start();
         $this->db->update('學生資料表', $data);
+        $this->db->trans_complete();
+        return $this->db->trans_status();
     }
 
     /**

@@ -73,9 +73,13 @@ class Course extends MX_Controller
     {
         $name = $this->input->post('課名');
         $credit = $this->input->post('學分數');
-        $this->course_model->update_data($id, $name, $credit);
+        $result = $this->course_model->update_data($id, $name, $credit);
 
-        echo "修改成功";
+        if ($result) {
+            echo "修改成功";
+        } else {
+            echo "修改失敗";
+        }
         $this->load->view('navigate_course');
     }
 
