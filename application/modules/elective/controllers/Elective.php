@@ -21,3 +21,4 @@ class Elective extends MX_Controller
         $this->load->view('elective');
     }
 }
+

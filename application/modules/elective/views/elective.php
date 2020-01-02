@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>選課作業系統</title>
+    <script type="text/javascript" src="<?= base_url() ?>assets/jquery-3.4.1.min.js"></script>
 </head>
 <body>
 
