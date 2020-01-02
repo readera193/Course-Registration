@@ -11,6 +11,8 @@
     <button type="button" onclick="window.location.assign('department')">科系管理系統</button>
     <button type="button" onclick="window.location.assign('course')">課程管理系統</button>
     <button type="button" onclick="window.location.assign('student')">學生管理系統</button>
+    <br><br>
+    <button type="button" onclick="window.location.assign('elective')">選課作業系統</button>
 </div>
 
 </body>
