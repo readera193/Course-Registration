@@ -21,8 +21,18 @@ class Department extends MX_Controller
      */
     public function index()
     {
-        $result = $this->department_model->get_data();
+        $result = $this->get_departments();
         $this->load->view('department', array('departments' => $result->result_array()));
+    }
+
+    /**
+     * 取得所有科系資料
+     *
+     * @return CI_DB_result
+     */
+    public function get_departments()
+    {
+        return $this->department_model->get_data();
     }
 
     /**

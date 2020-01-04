@@ -21,8 +21,18 @@ class Student extends MX_Controller
      */
     public function index()
     {
-        $result = $this->student_model->get_data();
+        $result = $this->get_students();
         $this->load->view('student', array('students' => $result->result_array()));
+    }
+
+    /**
+     * 取得所有學生資料
+     *
+     * @return CI_DB_result
+     */
+    public function get_students()
+    {
+        return $this->student_model->get_data();
     }
 
     /**

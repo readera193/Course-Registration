@@ -2,9 +2,6 @@
 
 /**
  * Class Elective
- *
- * @property Student module $student
- * @property Student_model $student_model
  */
 class Elective extends MX_Controller
 {
@@ -20,7 +17,6 @@ class Elective extends MX_Controller
     {
         parent::__construct();
         $this->student = Modules::load('student');
-        $this->student->load->model('Student_model', 'student_model');
     }
 
     /**
@@ -28,8 +24,10 @@ class Elective extends MX_Controller
      */
     public function index()
     {
-        $result = $this->student_model->get_data();
-        $this->load->view('elective', array('students' => $result->result_array()));
+        $data = array(
+            'students' => $this->student->get_students()->result_array(),
+        );
+        $this->load->view('elective', $data);
     }
 }
 

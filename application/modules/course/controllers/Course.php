@@ -21,8 +21,18 @@ class Course extends MX_Controller
      */
     public function index()
     {
-        $result = $this->course_model->get_data();
+        $result = $this->get_courses();
         $this->load->view('course', array('courses' => $result->result_array()));
+    }
+
+    /**
+     * 取得所有課程資料
+     *
+     * @return CI_DB_result
+     */
+    public function get_courses()
+    {
+        return $this->course_model->get_data();
     }
 
     /**
