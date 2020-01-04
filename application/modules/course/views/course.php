@@ -27,9 +27,7 @@
             <th>功能</th>
         </tr>
         <!-- 顯示資料內容 -->
-        <?
-        foreach ($courses as $course) {
-            ?>
+        <? foreach ($courses as $course): ?>
             <tr>
                 <td><?= $course['課號'] ?></td>
                 <td><?= $course['課名'] ?></td>
@@ -39,9 +37,7 @@
                     <a href="<?= base_url() ?>course/delete/<?= $course['課號'] ?>">刪除</a>
                 </td>
             </tr>
-            <?
-        }
-        ?>
+        <? endforeach; ?>
     </table>
 </div>
 

@@ -27,9 +27,7 @@
             <th>功能</th>
         </tr>
         <!-- 顯示資料內容 -->
-        <?
-        foreach ($departments as $department) {
-            ?>
+        <? foreach ($departments as $department): ?>
             <tr>
                 <td><?= $department['系碼'] ?></td>
                 <td><?= $department['系名'] ?></td>
@@ -39,9 +37,7 @@
                     <a href="<?= base_url() ?>department/delete/<?= $department['系碼'] ?>">刪除</a>
                 </td>
             </tr>
-            <?
-        }
-        ?>
+        <? endforeach; ?>
     </table>
 </div>
 
