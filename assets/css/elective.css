@@ -1,0 +1,21 @@
+.course-list {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    margin: 30px;
+}
+
+div.course-list button {
+    float: right;
+}
+
+caption {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+table {
+    width: 300px;
+    margin-bottom: 5px;
+}
+

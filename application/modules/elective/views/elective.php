@@ -3,31 +3,14 @@
 <head>
     <meta charset="utf-8">
     <title>選課作業系統</title>
-    <script type="text/javascript" src="<?= base_url() ?>assets/js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="<?= base_url() ?>assets/js/elective.js"></script>
+    <link type="text/css" rel="stylesheet" href="<?= base_url('assets/css/elective.css') ?>">
+    <script type="text/javascript" src="<?= base_url('assets/js/jquery-3.4.1.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?= base_url('assets/js/elective.js') ?>"></script>
     <script type="text/javascript">
         let base_url = function () {
             return "<?= base_url() ?>";
         };
     </script>
-    <style type="text/css">
-        .course-list {
-            display: inline-block;
-            vertical-align: top;
-            text-align: center;
-            margin: 30px;
-        }
-
-        caption {
-            text-align: left;
-            margin-bottom: 5px;
-        }
-
-        table {
-            width: 300px;
-            margin-bottom: 5px;
-        }
-    </style>
 </head>
 <body>
 
@@ -55,7 +38,7 @@
                 <th>學分數</th>
             </tr>
         </table>
-        <button style="float: right">加選</button>
+        <button>加選</button>
         <!--TODO: 實作加選按鈕功能-->
     </div>
 
@@ -69,7 +52,7 @@
                 <th>學分數</th>
             </tr>
         </table>
-        <button style="float: right">退選</button>
+        <button>退選</button>
         <!--TODO: 實作退選按鈕功能-->
     </div>
 </div>
