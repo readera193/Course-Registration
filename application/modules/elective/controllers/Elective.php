@@ -40,6 +40,9 @@ class Elective extends MX_Controller
         $this->load->view('elective', $data);
     }
 
+    /**
+     * 取得已選課程的課號
+     */
     public function ajax_get_courses()
     {
         $optional_course_content = "";
@@ -55,12 +58,13 @@ class Elective extends MX_Controller
         }
 
         foreach ($course_list as $course) {
-            $content = "<tr>
-                            <td><input type='checkbox'></td>
-                            <td>{$course['課號']}</td>
-                            <td>{$course['課名']}</td>
-                            <td>{$course['學分數']}</td>
-                        </tr>";
+            $content =
+                "<tr class='course'>
+                    <td><input type='checkbox' value='{$course['課號']}'></td>
+                    <td>{$course['課號']}</td>
+                    <td>{$course['課名']}</td>
+                    <td>{$course['學分數']}</td>
+                </tr>";
 
             if (in_array($course['課號'], $selected_course_list)) {
                 $selected_course_content .= $content;
@@ -73,6 +77,18 @@ class Elective extends MX_Controller
             'optional' => $optional_course_content,
             'selected' => $selected_course_content
         ));
+    }
+
+    /**
+     * 加選課程
+     */
+    public function enroll()
+    {
+        $student_id = $this->input->post('student_id');
+        $course_id = $this->input->post('course_id');
+        $result = $this->elective_model->enroll($student_id, $course_id);
+
+        echo json_encode($result);
     }
 }
 

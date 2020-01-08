@@ -29,30 +29,29 @@
     </form>
 
     <div class="course-list">
-        <table frame="hsides">
+        <table class="optional-course-list" frame="hsides">
             <caption>可加選課程:</caption>
-            <tr class="course-header optional-course-list">
+            <tr>
                 <th><!--TODO: 全選按鈕--></th>
                 <th>課號</th>
                 <th>課名</th>
                 <th>學分數</th>
             </tr>
         </table>
-        <button>加選</button>
-        <!--TODO: 實作加選按鈕功能-->
+        <button onclick="enroll()">加選</button>
     </div>
 
     <div class="course-list">
-        <table frame="hsides">
+        <table class="selected-course-list" frame="hsides">
             <caption>已選課程:</caption>
-            <tr class="course-header selected-course-list">
+            <tr>
                 <th><!--TODO: 全選按鈕--></th>
                 <th>課號</th>
                 <th>課名</th>
                 <th>學分數</th>
             </tr>
         </table>
-        <button>退選</button>
+        <button onclick="drop()">退選</button>
         <!--TODO: 實作退選按鈕功能-->
     </div>
 </div>
