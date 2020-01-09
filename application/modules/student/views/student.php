@@ -27,9 +27,7 @@
             <th>功能</th>
         </tr>
         <!-- 顯示資料內容 -->
-        <?
-        foreach ($students as $student) {
-            ?>
+        <? foreach ($students as $student): ?>
             <tr>
                 <td><?= $student['學號'] ?></td>
                 <td><?= $student['姓名'] ?></td>
@@ -39,9 +37,7 @@
                     <a href="<?= base_url() ?>student/delete/<?= $student['學號'] ?>">刪除</a>
                 </td>
             </tr>
-            <?
-        }
-        ?>
+        <? endforeach; ?>
     </table>
 </div>
 
