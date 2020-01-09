@@ -52,7 +52,6 @@
             </tr>
         </table>
         <button onclick="drop()">退選</button>
-        <!--TODO: 實作退選按鈕功能-->
     </div>
 </div>
 

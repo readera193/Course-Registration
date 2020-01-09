@@ -59,7 +59,7 @@ class Elective extends MX_Controller
 
         foreach ($course_list as $course) {
             $content =
-                "<tr class='course'>
+                "<tr class='course_tr'>
                     <td><input type='checkbox' value='{$course['課號']}'></td>
                     <td>{$course['課號']}</td>
                     <td>{$course['課名']}</td>
@@ -89,6 +89,16 @@ class Elective extends MX_Controller
         $result = $this->elective_model->enroll($student_id, $course_id);
 
         echo json_encode($result);
+    }
+
+    /**
+     * 退選課程
+     */
+    public function drop()
+    {
+        $student_id = $this->input->post('student_id');
+        $course_id = $this->input->post('course_id');
+        $this->elective_model->drop($student_id, $course_id);
     }
 }
 

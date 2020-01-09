@@ -46,5 +46,21 @@ class Elective_model extends CI_Model
         $this->db->trans_complete();
         return $this->db->trans_status();
     }
+
+    /**
+     * 退選課程
+     *
+     * @param string $student_id 學號
+     * @param string $course_id 課號
+     */
+    public function drop($student_id, $course_id)
+    {
+        $elective_data = array(
+            '課號' => $course_id,
+            '學號' => $student_id,
+        );
+        $this->db->where($elective_data);
+        $this->db->delete('選課資料表');
+    }
 }
 
