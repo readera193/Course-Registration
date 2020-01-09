@@ -59,7 +59,7 @@ class Elective extends MX_Controller
 
         foreach ($course_list as $course) {
             $content =
-                "<tr class='course_tr'>
+                "<tr class='course-tr'>
                     <td><input type='checkbox' value='{$course['課號']}'></td>
                     <td>{$course['課號']}</td>
                     <td>{$course['課名']}</td>

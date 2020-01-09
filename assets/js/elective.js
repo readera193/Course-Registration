@@ -1,6 +1,6 @@
 $(function () {
     $("#student_selector").on("change", function () {
-        $(".course_tr").remove();
+        $(".course-tr").remove();
         let student_id = $("#student_selector").prop('value');
 
         // 選項"請選擇學生"(未選擇)
@@ -21,7 +21,7 @@ $(function () {
                 console.log("ajax error");
             },
         });
-    })
+    });
 });
 
 function enroll() {
@@ -41,7 +41,7 @@ function enroll() {
                     if (result) {
                         // 移動課程資料到"已選課程"清單
                         $(checkbox).prop('checked', false);
-                        let course_tr = $(checkbox).parents('tr.course_tr');
+                        let course_tr = $(checkbox).parents('tr.course-tr');
                         $(".selected-course-list").append(course_tr.remove());
                     } else {
                         alert(course_id + "加選失敗");
@@ -70,7 +70,7 @@ function drop() {
                 complete: function (xhr, status) {
                     // 移動課程資料到"可加選課程"清單
                     $(checkbox).prop('checked', false);
-                    let course_tr = $(checkbox).parents('tr.course_tr');
+                    let course_tr = $(checkbox).parents('tr.course-tr');
                     $(".optional-course-list").append(course_tr.remove());
                 },
             })
