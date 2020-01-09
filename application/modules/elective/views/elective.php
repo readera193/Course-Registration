@@ -29,10 +29,10 @@
     </form>
 
     <div class="course-list">
-        <table class="optional-course-list" frame="hsides">
+        <table id="optional_course_list" frame="hsides">
             <caption>可加選課程:</caption>
             <tr>
-                <th><!--TODO: 全選按鈕--></th>
+                <th><input type="checkbox" id="optional_select_all" class="select-all"></th>
                 <th>課號</th>
                 <th>課名</th>
                 <th>學分數</th>
@@ -42,10 +42,10 @@
     </div>
 
     <div class="course-list">
-        <table class="selected-course-list" frame="hsides">
+        <table id="selected_course_list" frame="hsides">
             <caption>已選課程:</caption>
             <tr>
-                <th><!--TODO: 全選按鈕--></th>
+                <th><input type="checkbox" id="selected_select_all" class="select-all"></th>
                 <th>課號</th>
                 <th>課名</th>
                 <th>學分數</th>

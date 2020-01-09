@@ -1,6 +1,7 @@
 $(function () {
     $("#student_selector").on("change", function () {
         $(".course-tr").remove();
+        $(".select-all").prop('checked', false);
         let student_id = $("#student_selector").prop('value');
 
         // 選項"請選擇學生"(未選擇)
@@ -14,19 +15,28 @@ $(function () {
             data: {'student_id': student_id},
             dataType: "json",
             success: function (course_content) {
-                $(".optional-course-list").append(course_content['optional']);
-                $(".selected-course-list").append(course_content['selected']);
+                $("#optional_course_list").append(course_content['optional']);
+                $("#selected_course_list").append(course_content['selected']);
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 console.log("ajax error");
             },
         });
     });
+
+
+    $("#optional_select_all").on('click', function () {
+        $("#optional_course_list").find("input:checkbox").prop('checked', $(this).prop('checked'));
+    });
+
+    $("#selected_select_all").on('click', function () {
+        $("#selected_course_list").find("input:checkbox").prop('checked', $(this).prop('checked'));
+    });
 });
 
 function enroll() {
     let student_id = $("#student_selector").prop('value');
-    $(".optional-course-list").find("input:checkbox").each(function (index, checkbox) {
+    $("#optional_course_list").find("input:checkbox").each(function (index, checkbox) {
         if ($(checkbox).prop('checked')) {
             let course_id = $(checkbox).prop('value');
             $.ajax({
@@ -42,7 +52,7 @@ function enroll() {
                         // 移動課程資料到"已選課程"清單
                         $(checkbox).prop('checked', false);
                         let course_tr = $(checkbox).parents('tr.course-tr');
-                        $(".selected-course-list").append(course_tr.remove());
+                        $("#selected_course_list").append(course_tr.remove());
                     } else {
                         alert(course_id + "加選失敗");
                     }
@@ -57,7 +67,7 @@ function enroll() {
 
 function drop() {
     let student_id = $("#student_selector").prop('value');
-    $(".selected-course-list").find("input:checkbox").each(function (index, checkbox) {
+    $("#selected_course_list").find("input:checkbox").each(function (index, checkbox) {
         if ($(checkbox).prop('checked')) {
             let course_id = $(checkbox).prop('value');
             $.ajax({
@@ -71,7 +81,7 @@ function drop() {
                     // 移動課程資料到"可加選課程"清單
                     $(checkbox).prop('checked', false);
                     let course_tr = $(checkbox).parents('tr.course-tr');
-                    $(".optional-course-list").append(course_tr.remove());
+                    $("#optional_course_list").append(course_tr.remove());
                 },
             })
         }
