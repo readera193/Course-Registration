@@ -2,7 +2,6 @@
 
 /**
  * Class Department_model
- *
  */
 class Department_model extends CI_Model
 {

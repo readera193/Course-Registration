@@ -2,7 +2,6 @@
 
 /**
  * Class Course_model
- *
  */
 class Course_model extends CI_Model
 {

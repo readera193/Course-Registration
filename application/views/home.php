@@ -13,6 +13,7 @@
     <button type="button" onclick="window.location.assign('student')">學生管理系統</button>
     <br><br>
     <button type="button" onclick="window.location.assign('elective')">選課作業系統</button>
+    <button type="button" onclick="window.location.assign('search')">各項查詢作業系統</button>
 </div>
 
 </body>
