@@ -19,14 +19,13 @@
     <button onclick="window.location.assign('<?= base_url() ?>')">首頁</button>
     <br><br>
 
-    <form>
-        <select id="student_selector" name="student">
-            <option value>請選擇學生</option>
-            <? foreach ($students as $student): ?>
-                <option value="<?= $student['學號'] ?>"><?= $student['學號'] . ' ' . $student['姓名'] ?></option>
-            <? endforeach; ?>
-        </select>
-    </form>
+    <select id="student_selector">
+        <option value>請選擇學生</option>
+        <? foreach ($students as $student): ?>
+            <option value="<?= $student['學號'] ?>"><?= $student['學號'] . ' ' . $student['姓名'] ?></option>
+        <? endforeach; ?>
+    </select>
+    <br>
 
     <div class="course-list">
         <table id="optional_course_list" frame="hsides">
