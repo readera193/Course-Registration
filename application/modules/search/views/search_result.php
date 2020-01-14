@@ -1,4 +1,4 @@
-<table border="1">
+<table border="1" style="text-align: center">
     <tr>
         <? foreach ($fields as $field): ?>
             <th><?= $field ?></th>

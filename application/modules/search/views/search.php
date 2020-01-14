@@ -17,6 +17,10 @@
         <label for="query_selector">預設查詢指令：</label>
         <select id="query_selector">
             <option value="unselected" selected>請選擇查詢指令</option>
+            <option value="student_select_num">查詢各位同學選科目數</option>
+            <option value="course_selected_num">查詢每門課程選修人數</option>
+            <option value="student_avg_grade">查詢各位同學平均成績</option>
+            <option value="course_avg_grade">查詢每門課程平均分數</option>
             <option value="elective">查詢學生選課紀錄</option>
         </select>
         <br><br>
